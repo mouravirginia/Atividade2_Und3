@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+void Organiza(int x[], int y)
+{
+    register int i,z;
+    register int auxiliar;
+    for(i=1;i<y;i++)
+{
+    for(z=y-1;z>=i;z--)
+{
+    if(x[z-1] > x[z])
+{
+    auxiliar = x[z-1];
+    x[z-1] = x[z];
+    x[z] = auxiliar;
+}
+}
+   }
+   return;
+}
+
+int main()
+{
+    int vm;
+    int num;
+    int vetor[num];
+    int contdr;
+
+printf ("Digite a quantidade de números que serão ordenados:\n");
+    scanf("%d", &num);
+printf ("Agora faça a inserção desses números:\n");
+
+for (vm = 0; vm < num; vm++)
+{
+   scanf("%d", &vetor[vm] );
+}
+
+Organiza(vetor, num);
+printf("Os números inseridos em ordem crescente:");
+
+for(contdr = 0; contdr < num; contdr++)
+{
+printf(" %d ", vetor[contdr] );
+}
+
+return 0;
+}
